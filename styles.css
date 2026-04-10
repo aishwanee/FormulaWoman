@@ -1,0 +1,416 @@
+/* =========================================
+   RESET + ROOT
+========================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --pink: rgb(245, 53, 170);
+  --pink-soft: rgba(245, 53, 170, 0.4);
+  --black: #000;
+  --white: #fff;
+  --header-h: 70px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: "Lucida Handwriting", cursive;
+}
+
+
+/* =========================================
+   HERO INTRO
+========================================= */
+body.intro-active { overflow: hidden; }
+
+.site-hero {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  z-index: 99999;
+  transition: opacity 0.6s ease;
+}
+
+.site-hero.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.site-hero.gone { display: none; }
+
+.hero-title {
+  font-size: clamp(50px, 8vw, 100px);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroFade 0.8s ease 0.3s forwards;
+}
+
+.hero-title .word-formula { color: #fff; }
+
+.hero-title .word-woman {
+  color: var(--pink);
+  text-shadow:
+    0 0 20px var(--pink),
+    0 0 40px var(--pink-soft);
+}
+
+.hero-sub {
+  margin-top: 14px;
+  font-size: clamp(14px, 2vw, 20px);
+  opacity: 0;
+  animation: heroFade 0.6s ease 0.9s forwards;
+}
+
+@keyframes heroFade {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* =========================================
+   HEADER + NAVBAR
+========================================= */
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  background: rgba(0,0,0,0.95);
+  backdrop-filter: blur(10px);
+  z-index: 9000;
+
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: 0.4s ease;
+}
+
+.site-header.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.header-brand {
+  font-size: 22px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.navbar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+}
+
+.item a {
+  padding: 0 18px;
+  line-height: var(--header-h);
+  text-decoration: none;
+  color: #ccc;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: 0.2s;
+}
+
+.item a:hover {
+  color: var(--pink);
+}
+
+
+/* =========================================
+   NAV BUTTONS
+========================================= */
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+button,
+.btn {
+  padding: 0.55em 1.5em;
+  font-size: 0.8rem;
+  border-radius: 20px; /* rounded */
+  border: 1px solid rgba(255,255,255,0.4);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+button:hover,
+.btn:hover {
+  background: #fff;
+  color: var(--pink);
+  border-color: #fff;
+}
+
+.nav-buttons button:last-child {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: #fff;
+}
+
+.nav-buttons button:last-child:hover {
+  background: #fff;
+  color: var(--pink);
+  border-color: #fff;
+}
+
+
+/* =========================================
+   DROPDOWN (simple + stable)
+========================================= */
+.dropdown { position: relative; }
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #111;
+  min-width: 160px;
+  border-top: 2px solid var(--pink);
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 14px;
+  color: #ccc;
+  font-size: 13px;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(245,53,170,0.12);
+  color: #fff;
+}
+
+
+/* =========================================
+   COUNTDOWN HERO (MAIN SECTION)
+========================================= */
+.countdown-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 80px; /* compensates navbar */
+}
+
+.countdown-label {
+  font-size: 11px;
+  letter-spacing: 6px;
+  color: var(--pink);
+  margin-bottom: 14px;
+}
+
+.countdown-race-name {
+  font-size: clamp(50px, 7vw, 90px);
+  margin-bottom: 10px;
+}
+
+.countdown-date {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+
+.countdown-timer-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 90px;
+}
+
+.countdown-number {
+  font-size: clamp(64px, 8vw, 100px);
+  color: rgb(245, 53, 170);
+  line-height: 1;
+  text-shadow:
+    0 0 6px rgba(245,53,170,0.9),
+    0 0 14px rgba(245,53,170,0.7),
+    0 0 28px rgba(245,53,170,0.5);
+}
+
+.countdown-label-small {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #888;
+  margin-top: 8px;
+}
+
+.countdown-sep {
+  font-size: 3.5rem; /* slightly smaller than numbers */
+  color: rgb(245,53,170);
+  opacity: 0.4;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================
+   BUTTON (HERO)
+========================================= */
+.countdown-section .btn {
+  margin-top: 20px;
+  padding: 10px 24px;
+  border: 1px solid #aaa;
+}
+
+.countdown-section .btn:hover {
+  background: #fff;
+  color: var(--pink);
+  border-color: #fff;
+}
+
+
+/* =========================================
+   BANNERS
+========================================= */
+.banners-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* spacing between cards */
+  padding: 20px; /* outer breathing room */
+}
+
+.banner-section {
+  padding: 70px 40px;
+  text-align: center;
+  transition: all 0.35s ease;
+  border-radius: 18px;
+
+  border: 1px solid rgba(255,255,255,0.08); /* subtle base border */
+  position: relative;
+}
+
+.banner-section .btn {
+  position: relative;
+  z-index: 2;
+}
+
+.banner-section:hover {
+  transform: translateY(-6px) scale(1.01);
+
+  border-color: rgba(245,53,170,0.6); /* pink border on hover */
+
+  box-shadow:
+    0 0 20px rgba(245,53,170,0.25),
+    0 0 40px rgba(245,53,170,0.15),
+    0 10px 30px rgba(0,0,0,0.6); /* depth + glow */
+}
+
+.banner-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+
+  background: radial-gradient(
+    circle at top,
+    rgba(245,53,170,0.15),
+    transparent 60%
+  );
+}
+
+.banner-section:hover::before {
+  opacity: 1;
+}
+
+.banner-live {
+  background: linear-gradient(135deg, rgba(245,53,170,0.3), #000);
+}
+
+.banner-tickets {
+  background: linear-gradient(135deg, rgba(245,53,170,0.3), #000);
+}
+
+.banner-merch {
+  background: linear-gradient(135deg, rgba(245,53,170,0.3), #000);
+}
+
+.banner-section h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 40px;
+  color: #444;
+  font-size: 12px;
+}
+
+footer .btn {
+  border: none;
+  background: transparent;
+  color: var(--pink);
+  font-size: 20px;
+  padding: 6px 10px;
+}
+
+footer .btn:hover {
+  background: transparent;
+  color: var(--pink); /* no change on hover */
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 900px) {
+  .banners-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .countdown-number {
+    font-size: 36px;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
