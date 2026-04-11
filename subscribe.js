@@ -139,7 +139,6 @@
     setTimeout(() => {
       payBtn.disabled = false;
       payBtn.textContent = 'Pay now';
-      // Replace with real Stripe / payment API call:
       showMsg('modal-success', '🎉 Payment successful! Welcome to Formula Woman TV.', 'success');
       setTimeout(() => {
         closeModal();
@@ -148,7 +147,6 @@
     }, 2000);
   });
 
-  /* ── Init ────────────────────────────────────────────────── */
   updatePrices();
 
 })();
