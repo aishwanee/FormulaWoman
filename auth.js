@@ -1,6 +1,4 @@
-/**
- * FORMULA WOMAN — Auth JS (auth.js)
- * Handles: sign in, register, password toggle, strength meter,
+/* Handles: sign in, register, password toggle, strength meter,
  *          form validation, message display.
  */
 (function () {
