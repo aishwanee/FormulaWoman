@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merch | Formula Woman</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <div id="navbar-container"></div>
+
+  <!-- HERO -->
+  <section class="shop-hero">
+    <div class="shop-hero-bg"></div>
+    <div class="shop-hero-inner">
+      <p class="shop-hero-eyebrow">Official Store</p>
+      <h1 class="shop-hero-title">Wear the <span class="shop-hero-accent">Merch</span></h1>
+      <p class="shop-hero-desc">
+        Official Formula Woman apparel, accessories, and collectibles. Represent your favourite driver or team in style.
+      </p>
+    </div>
+  </section>
+
+  <!-- DUAL FILTER BARS -->
+  <div class="merch-filters-wrap">
+
+    <div class="merch-filter-group">
+      <span class="merch-filter-label">By Type</span>
+      <div class="shop-filter-bar" id="merch-type-filter">
+        <button class="shop-filter-btn active" data-type="all">All</button>
+        <button class="shop-filter-btn" data-type="tops">Tops</button>
+        <button class="shop-filter-btn" data-type="headwear">Headwear</button>
+        <button class="shop-filter-btn" data-type="accessories">Accessories</button>
+        <button class="shop-filter-btn" data-type="collectibles">Collectibles</button>
+      </div>
+    </div>
+
+    <div class="merch-filter-group">
+      <span class="merch-filter-label">By Team</span>
+      <div class="shop-filter-bar" id="merch-team-filter">
+        <button class="shop-filter-btn active" data-team="all">All Teams</button>
+        <button class="shop-filter-btn" data-team="Ferrari">Ferrari</button>
+        <button class="shop-filter-btn" data-team="McLaren">McLaren</button>
+        <button class="shop-filter-btn" data-team="Mercedes">Mercedes</button>
+        <button class="shop-filter-btn" data-team="Red Bull Racing">Red Bull</button>
+        <button class="shop-filter-btn" data-team="Williams">Williams</button>
+        <button class="shop-filter-btn" data-team="Aston Martin">Aston Martin</button>
+        <button class="shop-filter-btn" data-team="Alpine">Alpine</button>
+        <button class="shop-filter-btn" data-team="Haas">Haas</button>
+        <button class="shop-filter-btn" data-team="Racing Bulls">Racing Bulls</button>
+        <button class="shop-filter-btn" data-team="Audi">Audi</button>
+        <button class="shop-filter-btn" data-team="Cadillac">Cadillac</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SORT ROW -->
+  <div class="merch-sort-row">
+    <span class="merch-count" id="merch-count"></span>
+    <select class="merch-sort-select" id="merch-sort">
+      <option value="featured">Featured</option>
+      <option value="price-asc">Price: Low to High</option>
+      <option value="price-desc">Price: High to Low</option>
+      <option value="name">Name A–Z</option>
+    </select>
+  </div>
+
+  <main class="shop-main">
+    <div class="merch-grid" id="merch-grid"></div>
+  </main>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart-backdrop" id="cart-backdrop"></div>
+  <div class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+      <h3 class="cart-title">Your Bag</h3>
+      <button class="modal-close" id="cart-close">&times;</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <p class="cart-empty">Your bag is empty.</p>
+    </div>
+    <div class="cart-footer" id="cart-footer" style="display:none">
+      <div class="cart-total-row">
+        <span>Total</span>
+        <span id="cart-total">£0.00</span>
+      </div>
+      <button class="auth-submit" onclick="alert('Checkout integration goes here')">Checkout</button>
+      <p class="sub-cancel-note">Free shipping on orders over £60</p>
+    </div>
+  </div>
+
+  <!-- CART BUBBLE -->
+  <button class="cart-bubble" id="cart-bubble" aria-label="Open cart">
+    Cart <span class="cart-bubble-count" id="cart-count">0</span>
+  </button>
+
+  <!-- SIZE PICKER MODAL -->
+  <div class="modal-backdrop" id="merch-backdrop"></div>
+  <div class="modal shop-modal" id="merch-modal" role="dialog" aria-modal="true">
+    <button class="modal-close" id="merch-modal-close">&times;</button>
+    <div class="merch-modal-inner" id="merch-modal-inner"></div>
+  </div>
+
+  <footer style="display:flex;align-items:center;justify-content:space-between;padding:28px 40px;border-top:1px solid rgba(255,255,255,0.06);color:#444;font-size:12px;margin-top:60px;">
+    <p>&copy; 2003–2026 Formula Woman World Championship Limited</p>
+    <a href="#" class="btn">↑</a>
+  </footer>
+
+  <script src="js/navbar.js" defer></script>
+  <script src="js/merch.js" defer></script>
+
+</body>
+</html>

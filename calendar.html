@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar – Formula Woman</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div id="navbar-container"></div>
+
+  <main>
+
+    <!-- HERO -->
+    <div class="shop-hero">
+      <div class="shop-hero-bg"></div>
+      <div class="shop-hero-inner">
+        <p class="shop-hero-eyebrow">2026 Season</p>
+        <h1 class="shop-hero-title">Race <span class="shop-hero-accent">Calendar</span></h1>
+        <p class="shop-hero-desc">24 rounds. One championship. Follow every race of the Formula Woman season.</p>
+      </div>
+    </div>
+
+    <!-- NEXT RACE BANNER -->
+    <div class="cal-next-banner" id="cal-next-banner"></div>
+
+    <!-- 3-WAY PILL TOGGLE FILTER -->
+    <div class="cal-filter-wrap">
+      <div class="cal-pill-toggle" id="cal-filter-toggle">
+        <div class="cal-pill-track">
+          <div class="cal-pill-slider" id="cal-pill-slider"></div>
+          <button class="cal-pill-opt active" data-filter="all">All Races</button>
+          <button class="cal-pill-opt" data-filter="completed">Completed</button>
+          <button class="cal-pill-opt" data-filter="upcoming">Upcoming</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RACE GRID -->
+    <div class="shop-main">
+      <span class="cal-anchor" id="previous"></span>
+      <span class="cal-anchor" id="upcoming-anchor"></span>
+      <div class="cal-grid" id="cal-grid"></div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2003&ndash;2026 Formula Woman World Championship Limited</p>
+    <a href="#" class="btn">&uarr;</a>
+  </footer>
+
+  <script src="js/navbar.js" defer></script>
+  <script src="js/calendar.js" defer></script>
+</body>
+</html>

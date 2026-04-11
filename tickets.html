@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tickets | Formula Woman</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <div id="navbar-container"></div>
+
+  <!-- HERO -->
+  <section class="shop-hero">
+    <div class="shop-hero-bg"></div>
+    <div class="shop-hero-inner">
+      <p class="shop-hero-eyebrow">2026 Season</p>
+      <h1 class="shop-hero-title">Enjoy the <span class="shop-hero-accent">Experience</span></h1>
+      <p class="shop-hero-desc">
+        From grandstand seats to paddock hospitality — be trackside for the most electric women's racing series in the world.
+      </p>
+    </div>
+  </section>
+
+  <!-- DUAL FILTER BARS -->
+  <div class="merch-filters-wrap">
+
+    <div class="merch-filter-group">
+      <span class="merch-filter-label">By Region</span>
+      <div class="shop-filter-bar" id="ticket-region-filter">
+        <button class="shop-filter-btn active" data-region="all">All Events</button>
+        <button class="shop-filter-btn" data-region="europe">Europe</button>
+        <button class="shop-filter-btn" data-region="americas">Americas</button>
+        <button class="shop-filter-btn" data-region="asia">Asia &amp; Middle East</button>
+      </div>
+    </div>
+
+    <div class="merch-filter-group">
+      <span class="merch-filter-label">By Ticket Type</span>
+      <div class="shop-filter-bar" id="ticket-type-filter">
+        <button class="shop-filter-btn active" data-tickettype="all">All Types</button>
+        <button class="shop-filter-btn" data-tickettype="general">General Admission</button>
+        <button class="shop-filter-btn" data-tickettype="grandstand">Grandstand</button>
+        <button class="shop-filter-btn" data-tickettype="pitwalk">Pit Walk</button>
+        <button class="shop-filter-btn" data-tickettype="paddock">Paddock Club</button>
+      </div>
+    </div>
+
+  </div>
+
+  <main class="shop-main">
+    <div class="tickets-grid" id="tickets-grid"></div>
+  </main>
+
+  <!-- TICKET MODAL -->
+  <div class="modal-backdrop" id="ticket-backdrop"></div>
+  <div class="modal shop-modal" id="ticket-modal" role="dialog" aria-modal="true">
+    <button class="modal-close" id="ticket-modal-close">&times;</button>
+    <h2 class="modal-title" id="ticket-modal-title">Book Tickets</h2>
+    <p class="modal-plan-label" id="ticket-modal-sub"></p>
+
+    <div class="auth-field">
+      <label class="auth-label" for="t-name">Full Name</label>
+      <input class="auth-input" id="t-name" type="text" placeholder="Louise Hamilton">
+    </div>
+    <div class="auth-field">
+      <label class="auth-label" for="t-email">Email Address</label>
+      <input class="auth-input" id="t-email" type="email" placeholder="you@example.com">
+    </div>
+    <div class="modal-row-2">
+      <div class="auth-field">
+        <label class="auth-label" for="t-qty">Quantity</label>
+        <select class="auth-input" id="t-qty">
+          <option>1</option><option>2</option><option>3</option>
+          <option>4</option><option>5</option><option>6</option>
+        </select>
+      </div>
+      <div class="auth-field">
+        <label class="auth-label">Total</label>
+        <div class="auth-input t-total-display" id="t-total">—</div>
+      </div>
+    </div>
+
+    <div id="ticket-error"   class="auth-message auth-message-error"  ></div>
+    <div id="ticket-success" class="auth-message auth-message-success"></div>
+
+    <button class="auth-submit modal-submit" id="ticket-pay-btn" type="button">Book Now</button>
+    <p class="sub-cancel-note">Secure booking · Instant confirmation email</p>
+  </div>
+
+  <footer style="display:flex;align-items:center;justify-content:space-between;padding:28px 40px;border-top:1px solid rgba(255,255,255,0.06);color:#444;font-size:12px;margin-top:60px;">
+    <p>&copy; 2003–2026 Formula Woman World Championship Limited</p>
+    <a href="#" class="btn">↑</a>
+  </footer>
+
+  <script src="js/navbar.js" defer></script>
+  <script src="js/tickets.js" defer></script>
+
+</body>
+</html>

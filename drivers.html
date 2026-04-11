@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drivers – Formula Woman</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div id="navbar-container"></div>
+
+  <main>
+
+    <!-- HERO -->
+    <div class="shop-hero">
+      <div class="shop-hero-bg"></div>
+      <div class="shop-hero-inner">
+        <p class="shop-hero-eyebrow">2026 Season</p>
+        <h1 class="shop-hero-title">The <span class="shop-hero-accent">Drivers</span></h1>
+        <p class="shop-hero-desc">Meet the 16 women competing at the pinnacle of motorsport this season.</p>
+      </div>
+    </div>
+
+    <!-- TEAM FILTER (populated by drivers.js) -->
+    <div class="shop-filter-bar" id="drv-filters">
+      <button class="shop-filter-btn active" data-team="all">All Teams</button>
+    </div>
+
+    <!-- STANDINGS NOTE -->
+    <p style="text-align:center; font-size:11px; letter-spacing:2px; color:#333; margin-bottom:28px; text-transform:uppercase;">
+      Championship Standings &middot; After Round 5
+    </p>
+
+    <!-- DRIVER GRID -->
+    <div class="shop-main">
+      <div class="drv-grid" id="drv-grid"></div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2003&ndash;2026 Formula Woman World Championship Limited</p>
+    <a href="#" class="btn">&uarr;</a>
+  </footer>
+
+  <script src="js/navbar.js" defer></script>
+  <script src="js/drivers.js" defer></script>
+</body>
+</html>
