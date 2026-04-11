@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscribe | Formula Woman</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+
+  <!-- navbar.js injects header automatically -->
+
+  <!-- PAGE HERO -->
+  <section class="sub-hero">
+    <div class="sub-hero-bg"></div>
+    <div class="sub-hero-inner">
+      <p class="sub-hero-eyebrow">Formula Woman TV</p>
+      <h1 class="sub-hero-title">
+        Watch every lap.<br>
+        <span class="sub-hero-accent">Live &amp; on demand.</span>
+      </h1>
+      <p class="sub-hero-desc">
+        Exclusive access to every race, qualifying session, practice, team radio, and behind-the-scenes content from the world's premier women's motorsport championship.
+      </p>
+    </div>
+  </section>
+
+  <!-- PLAN CARDS -->
+  <main class="sub-main">
+    <p class="sub-section-label">Choose your plan</p>
+
+    <div class="sub-plans">
+
+      <!-- FREE -->
+      <div class="sub-card" id="plan-free">
+        <div class="sub-card-top">
+          <span class="sub-plan-badge">Free</span>
+          <h2 class="sub-plan-name">Pit Lane</h2>
+          <div class="sub-plan-price">
+            <span class="sub-price-amount">£0</span>
+            <span class="sub-price-per">/ month</span>
+          </div>
+          <p class="sub-plan-tagline">Get started with the basics</p>
+        </div>
+        <ul class="sub-features">
+          <li class="feat yes">Race highlights (delayed 24h)</li>
+          <li class="feat yes">Driver profiles &amp; stats</li>
+          <li class="feat yes">Full calendar &amp; standings</li>
+          <li class="feat yes">Breaking news feed</li>
+          <li class="feat no">Live race streaming</li>
+          <li class="feat no">Qualifying &amp; practice live</li>
+          <li class="feat no">Team radio access</li>
+          <li class="feat no">Onboard camera feeds</li>
+          <li class="feat no">Ad-free experience</li>
+        </ul>
+        <button class="sub-cta sub-cta-outline" onclick="location.href='register.html'">
+          Create Free Account
+        </button>
+      </div>
+
+      <!-- PRO (featured) -->
+      <div class="sub-card sub-card-featured" id="plan-pro">
+        <div class="sub-card-glow"></div>
+        <div class="sub-card-top">
+          <span class="sub-plan-badge sub-plan-badge-featured">Most Popular</span>
+          <h2 class="sub-plan-name">Pole Position</h2>
+          <div class="sub-plan-price">
+            <span class="sub-price-amount">£9<sup>.99</sup></span>
+            <span class="sub-price-per">/ month</span>
+          </div>
+          <p class="sub-plan-tagline">The full racing experience</p>
+        </div>
+        <ul class="sub-features">
+          <li class="feat yes">Everything in Pit Lane</li>
+          <li class="feat yes">Live race streaming</li>
+          <li class="feat yes">Live qualifying &amp; practice</li>
+          <li class="feat yes">Team radio access</li>
+          <li class="feat yes">Onboard camera feeds</li>
+          <li class="feat yes">Ad-free experience</li>
+          <li class="feat yes">Multi-device (up to 2)</li>
+          <li class="feat no">4K &amp; Dolby streams</li>
+          <li class="feat no">Exclusive interviews</li>
+        </ul>
+        <button class="sub-cta sub-cta-solid" id="sub-pro-btn">
+          Subscribe — £9.99/mo
+        </button>
+        <p class="sub-cancel-note">Cancel any time &nbsp;·&nbsp; No commitment</p>
+      </div>
+
+      <!-- VIP -->
+      <div class="sub-card" id="plan-vip">
+        <div class="sub-card-top">
+          <span class="sub-plan-badge">Premium</span>
+          <h2 class="sub-plan-name">Victory Lap</h2>
+          <div class="sub-plan-price">
+            <span class="sub-price-amount">£19<sup>.99</sup></span>
+            <span class="sub-price-per">/ month</span>
+          </div>
+          <p class="sub-plan-tagline">For the true race fan</p>
+        </div>
+        <ul class="sub-features">
+          <li class="feat yes">Everything in Pole Position</li>
+          <li class="feat yes">4K &amp; Dolby Atmos streams</li>
+          <li class="feat yes">Exclusive driver interviews</li>
+          <li class="feat yes">Pre/post-race analysis shows</li>
+          <li class="feat yes">Multi-device (up to 5)</li>
+          <li class="feat yes">Download &amp; watch offline</li>
+          <li class="feat yes">Early access to new features</li>
+          <li class="feat yes">Priority customer support</li>
+          <li class="feat yes">Merch discount (15% off)</li>
+        </ul>
+        <button class="sub-cta sub-cta-outline" id="sub-vip-btn">
+          Subscribe — £19.99/mo
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Annual toggle -->
+    <div class="sub-annual-row">
+      <label class="sub-toggle-wrap" id="annual-toggle">
+        <span class="sub-toggle-label">Pay annually</span>
+        <span class="sub-toggle-switch">
+          <input type="checkbox" id="annual-check">
+          <span class="sub-toggle-knob"></span>
+        </span>
+        <span class="sub-toggle-save">Save 20%</span>
+      </label>
+    </div>
+
+    <!-- Trust bar -->
+    <div class="sub-trust">
+      <span>Secure checkout</span>
+      <span>Stream on any device</span>
+      <span>24/7 support</span>
+      <span>Cancel any time</span>
+    </div>
+
+  </main>
+
+  <!-- CHECKOUT MODAL -->
+  <div class="modal-backdrop" id="modal-backdrop"></div>
+  <div class="modal" id="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+
+    <div class="modal-tabs">
+      <button class="modal-tab active" data-tab="card">Card</button>
+      <button class="modal-tab" data-tab="paypal">GPay</button>
+    </div>
+
+    <h2 class="modal-title" id="modal-title">Complete your subscription</h2>
+    <p class="modal-plan-label" id="modal-plan-label">Pole Position — £9.99/month</p>
+
+    <!-- CARD FORM -->
+    <div class="modal-form" id="tab-card">
+      <div class="auth-field">
+        <label class="auth-label" for="card-name">Name on card</label>
+        <input class="auth-input" id="card-name" type="text" placeholder="Your full name">
+      </div>
+      <div class="auth-field">
+        <label class="auth-label" for="card-num">Card number</label>
+        <input class="auth-input" id="card-num" type="text" placeholder="1234 5678 9012 3456"
+               maxlength="19" inputmode="numeric">
+      </div>
+      <div class="modal-row-2">
+        <div class="auth-field">
+          <label class="auth-label" for="card-exp">Expiry</label>
+          <input class="auth-input" id="card-exp" type="text" placeholder="MM / YY" maxlength="7">
+        </div>
+        <div class="auth-field">
+          <label class="auth-label" for="card-cvc">CVV</label>
+          <input class="auth-input" id="card-cvc" type="text" placeholder="123" maxlength="4"
+                 inputmode="numeric">
+        </div>
+      </div>
+      <div class="auth-field">
+        <label class="auth-label" for="card-email">Email for receipt</label>
+        <input class="auth-input" id="card-email" type="email" placeholder="you@example.com">
+      </div>
+
+      <div id="modal-error" class="auth-message auth-message-error" aria-live="polite"></div>
+      <div id="modal-success" class="auth-message auth-message-success" aria-live="polite"></div>
+
+      <button class="auth-submit modal-submit" id="pay-btn" type="button">Pay now</button>
+      <p class="sub-cancel-note" style="margin-top:14px;">Secured by RazorPay &nbsp;·&nbsp; Cancel any time</p>
+    </div>
+
+    <!-- PAYPAL PLACEHOLDER -->
+    <div class="modal-form hidden" id="tab-paypal">
+      <p style="color:#666;font-size:13px;text-align:center;padding:30px 0;">
+        You'll be redirected to GPay to complete your payment securely.
+      </p>
+      <button class="auth-submit modal-submit" style="background:#0070BA;border-color:#0070BA;" type="button"
+              onclick="alert('PayPal integration goes here')">
+        Continue to GPay
+      </button>
+    </div>
+  </div>
+
+  <footer style="display:flex;align-items:center;justify-content:space-between;padding:28px 40px;border-top:1px solid rgba(255,255,255,0.06);color:#444;font-size:12px;">
+    <p>&copy; 2003–2026 Formula Woman World Championship Limited</p>
+    <a href="#" class="btn">↑</a>
+  </footer>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/subscribe.js"></script>
+
+</body>
+</html>
